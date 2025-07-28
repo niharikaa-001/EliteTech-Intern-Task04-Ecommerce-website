@@ -1,0 +1,1867 @@
+/* Google Fonts - Playfair Display for headings, Montserrat for body text */
+@import url('https://fonts.fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* Redefined Variables for our NEW Bold Girly Palette */
+:root {
+    --bg-primary: #FFFAFA; /* Soft Rose White - Luxurious Base */
+    --bg-secondary: #FFF0F5; /* Blushing Pink - Light Accents */
+    --text-dark: #8B008B; /* Dark Magenta - Deep Text */
+    --text-muted: #DDA0DD; /* Plum - Soft Text */
+    --accent-vibrant: #FF69B4; /* Hot Pink - Main Accent */
+    --accent-gradient: linear-gradient(45deg, #FF69B4, #BA55D3); /* Hot Pink to Medium Orchid - Dynamic Gradient */
+    --border-light: rgba(255, 105, 180, 0.2); /* Soft Pink Border */
+    --shadow-light: rgba(255, 105, 180, 0.2); /* Pink Shadow */
+    --transition-ease: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Bouncy, playful transitions */
+    --glow-effect: 0 0 25px rgba(255, 105, 180, 0.8); /* Intense Hot Pink Glow */
+    --btn-glow: 0 0 35px rgba(255, 105, 180, 0.9); /* Stronger Button Glow */
+    --sparkle-color: rgba(255, 255, 255, 0.9); /* White Sparkle */
+}
+
+/* Base Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.7; /* Slightly more spacious line height */
+    background-color: var(--bg-primary);
+    color: var(--text-dark);
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    animation: fadeInScale 1s ease-out; /* Playful page load animation */
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px 0; /* Slightly more padding */
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-vibrant);
+    transition: all var(--transition-ease);
+    font-weight: 600; /* Make links bolder */
+}
+
+a:hover {
+    color: var(--text-dark);
+    text-shadow: 0 0 8px var(--accent-vibrant); /* Add a text glow on hover */
+    transform: translateY(-2px); /* Subtle lift */
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-dark);
+    margin-bottom: 25px; /* More spacing */
+    letter-spacing: 0.05em; /* Elegant letter spacing */
+    font-weight: 800; /* Extra bold */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* Soft shadow for depth */
+}
+
+p {
+    margin-bottom: 25px; /* More spacing */
+    color: var(--text-muted);
+    font-weight: 400;
+    font-size: 1.05rem; /* Slightly larger body text */
+}
+
+/* --- Header - Glamorous & Dynamic --- */
+header {
+    background: rgba(255, 240, 245, 0.98);/*  Blushing pink, slightly translucent */
+   
+    backdrop-filter: blur(10px); /* Stronger blur */
+    padding: 1.2rem 0; /* More padding */
+    border-bottom: 2px solid var(--border-light); /* More defined border */
+    box-shadow: 0 4px 25px var(--shadow-light); /* Deeper shadow */
+ 
+    top: 0;
+    z-index: 1000;
+    transition: background-color var(--transition-ease);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+/* For checkout page specifically, if header is just a title */
+header h1 {
+    font-size: 3.5rem; /* Larger title */
+    font-weight: 900; /* Extra bold */
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    text-shadow: none;
+    margin: 0 auto;
+    padding: 12px 0;
+    letter-spacing: 0.08em; /* More prominent letter spacing */
+}
+
+.logo a {
+    font-size: 2.5rem; /* Larger logo */
+    font-weight: 900;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    text-shadow: none;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.05em;
+}
+
+.logo a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -120%; /* Start further off-screen */
+    width: 60%; /* Wider shimmer */
+    height: 100%;
+    background: linear-gradient(90deg, transparent, var(--sparkle-color), transparent); /* White sparkle */
+    transform: skewX(-30deg); /* Sharper angle */
+    transition: left 0.8s ease-in-out; /* Slower, more elegant shimmer */
+}
+
+.logo a:hover::before {
+    left: 120%; /* Move further across */
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 40px; /* More spacing */
+}
+
+nav ul li a {
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 1.1rem; /* Slightly larger nav links */
+    position: relative;
+    padding-bottom: 10px; /* More space for underline */
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: all var(--transition-ease);
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 4px; /* Thicker underline */
+    background: var(--accent-vibrant);
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    transition: width 0.4s var(--transition-ease), background 0.4s var(--transition-ease); /* Smooth, bouncy transition */
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+    background: var(--accent-gradient); /* Gradient underline on hover */
+}
+
+nav ul li a:hover {
+    color: var(--accent-vibrant);
+    transform: translateY(-5px) rotate(-2deg); /* More pronounced lift with slight rotation */
+    text-shadow: var(--glow-effect); /* Stronger text glow */
+}
+
+/* --- Button Styling - Bold & Bouncy --- */
+.btn, .proceed-btn, .proceed-to-checkout-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 35px; /* More padding */
+    border-radius: 8px; /* Slightly more rounded */
+    font-size: 1.1rem; /* Larger font */
+    font-weight: 700; /* Bolder text */
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all var(--transition-ease); /* Bouncy global transition */
+    color: var(--bg-primary);
+    transform: translateZ(0); /* Hardware acceleration */
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    box-shadow: 0 8px 25px var(--shadow-light); /* Base shadow */
+}
+
+.btn::before, .proceed-btn::before, .proceed-to-checkout-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-gradient);
+    z-index: -1;
+    transition: transform 0.5s var(--transition-ease); /* Slower, more impactful slide */
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.btn:hover::before, .proceed-btn:hover::before, .proceed-to-checkout-btn:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Hot Pink Outline Button */
+.btn.primary {
+    background-color: transparent;
+    border: 3px solid var(--accent-vibrant); /* Thicker border */
+    color: var(--accent-vibrant);
+    overflow: hidden;
+    box-shadow: none; /* No base shadow */
+}
+
+.btn.primary::before {
+    background: var(--accent-gradient);
+    transform: scaleX(0);
+    transform-origin: right; /* Expand from right */
+}
+
+.btn.primary:hover {
+    color: var(--bg-primary);
+    border-color: transparent;
+    box-shadow: var(--glow-effect); /* Intense glow */
+    transform: translateY(-7px) rotate(2deg); /* More lift and playful rotation */
+}
+
+.btn.primary:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Gradient Filled Button */
+.btn.secondary {
+    background-color: var(--accent-vibrant);
+    color: var(--bg-primary);
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.4); /* Deeper shadow */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn.secondary::after { /* Sparkle/Shimmer Effect */
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, var(--sparkle-color) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: width 0.5s ease-out, height 0.5s ease-out, opacity 0.5s ease-out;
+    z-index: -1;
+}
+
+.btn.secondary:hover {
+    box-shadow: var(--btn-glow); /* Stronger button glow */
+    transform: translateY(-10px) rotate(-3deg); /* Even more lift with playful rotation */
+    transition: all 0.5s var(--transition-ease); /* Longer, more exaggerated transition */
+}
+
+.btn.secondary:hover::after {
+    width: 350px; /* Expand shimmer more */
+    height: 350px;
+    opacity: 0.3; /* More visible shimmer */
+}
+
+/* Specific styling for the checkout button, ensuring it uses the enhanced hover */
+.proceed-btn, .proceed-to-checkout-btn {
+    background: var(--accent-gradient);
+    color: var(--bg-primary);
+    box-shadow: 0 10px 35px rgba(255, 105, 180, 0.5);
+    border-radius: 60px; /* Even more rounded, pill-like */
+    padding: 18px 45px;
+    font-size: 1.3rem; /* Larger text */
+    transition: all 0.5s var(--transition-ease);
+}
+
+.proceed-btn:hover, .proceed-to-checkout-btn:hover {
+    box-shadow: 0 15px 50px rgba(255, 105, 180, 0.7);
+    transform: translateY(-10px) scale(1.03); /* More lift and slight scale */
+    background: var(--accent-gradient);
+}
+/* Ensure these buttons also have the shimmer/light effect on hover */
+.proceed-btn::after, .proceed-to-checkout-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, var(--sparkle-color) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: width 0.5s ease-out, height 0.5s ease-out, opacity 0.5s ease-out;
+    z-index: -1;
+}
+.proceed-btn:hover::after, .proceed-to-checkout-btn:hover::after {
+    width: 350px;
+    height: 350px;
+    opacity: 0.3;
+}
+
+
+
+
+
+
+/* --- Hero Section - Dazzling & Bold (Updated for Video) --- */
+.hero-video-section {
+    position: relative;
+    height: 80vh; /* Taller hero */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--bg-secondary); /* Fallback background */
+    box-shadow: inset 0 -80px 100px rgba(0,0,0,0.08); /* Deeper inner shadow */
+    z-index: 0; /* Ensure content is above the video */
+}
+
+.hero-background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Place video behind content */
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover;
+    filter: brightness(0.85) contrast(1.2); /* More vivid colors */
+    animation: mediaPanZoomRotate 40s linear infinite alternate; /* Keep the playful animation */
+}
+
+/* Ensure the content within the hero-video-section is styled correctly */
+.hero-video-section h1 {
+    font-size: 5.5rem; /* Massive heading */
+    margin-bottom: 30px;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-shadow: 3px 3px 10px rgba(255, 105, 180, 0.4); /* Stronger glow */
+    position: relative; /* Ensure text is above video */
+    z-index: 2;
+    animation: fadeInSlidePop 1.2s var(--transition-ease) forwards; /* Apply the content animation */
+    animation-delay: 0.2s; /* Stagger the animation */
+}
+
+.hero-video-section p {
+    font-size: 1.6rem; /* Larger body text */
+    margin-bottom: 50px;
+    color: var(--text-dark);
+    font-weight: 400;
+    position: relative; /* Ensure text is above video */
+    z-index: 2;
+    animation: fadeInSlidePop 1.2s var(--transition-ease) forwards; /* Apply the content animation */
+    animation-delay: 0.4s; /* Stagger the animation */
+}
+
+.hero-video-section .btn {
+    padding: 20px 50px; /* Even bigger button */
+    font-size: 1.4rem;
+    border-radius: 60px; /* Pill shape */
+    box-shadow: 0 12px 40px rgba(255, 105, 180, 0.5);
+    position: relative; /* Ensure button is above video */
+    z-index: 2;
+    animation: fadeInSlidePop 1.2s var(--transition-ease) forwards; /* Apply the content animation */
+    animation-delay: 0.6s; /* Stagger the animation */
+}
+
+.hero-video-section .btn:hover {
+    box-shadow: 0 18px 60px rgba(255, 105, 180, 0.8);
+}
+
+/* This is a crucial addition to create a clear overlay for the text */
+.hero-video-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4); /* Semi-transparent white overlay */
+    backdrop-filter: blur(4px); /* Subtle blur for the overlay */
+    z-index: 1; /* Place overlay between video and content */
+}
+
+/* Ensure the hero-content animation is reused here */
+@keyframes fadeInSlidePop {
+    from { opacity: 0; transform: translateY(80px) scale(0.85); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* The mediaPanZoomRotate animation is already defined in your existing CSS */
+/* You might want to remove the `.hero` and `.hero-content` rules
+    if you are solely using `.hero-video-section` for your hero.
+    If you intend to use both, keep them as is and the new rules will apply
+    specifically to the new HTML structure. */
+
+
+
+
+
+
+
+/* --- General Section Title - Elegant & Playful --- */
+.section-title {
+    text-align: center;
+    margin-bottom: 80px; /* More spacing */
+    font-size: 4.5rem; /* Larger title */
+    position: relative;
+    padding-bottom: 25px;
+    font-weight: 900;
+    color: var(--text-dark);
+    text-transform: capitalize;
+    letter-spacing: 0.08em;
+    text-shadow: 2px 2px 7px rgba(0,0,0,0.1);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 100px; /* Wider underline */
+    height: 6px; /* Thicker underline */
+    background: var(--accent-gradient);
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    border-radius: 3px;
+    animation: scaleInBounce 2s var(--transition-ease) infinite alternate; /* Bouncier animation */
+}
+
+@keyframes scaleInBounce {
+    0% { transform: translateX(-50%) scaleX(0.4); opacity: 0.6; }
+    50% { transform: translateX(-50%) scaleX(1.1); opacity: 1; }
+    100% { transform: translateX(-50%) scaleX(0.9); opacity: 0.9; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Product Grid - Interactive & Glamorous --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Slightly wider min-width */
+    gap: 40px; /* More spacing */
+}
+
+.product-card {
+    background: var(--bg-primary);
+    border: 3px solid transparent; /* Prepare for animated border */
+    border-radius: 18px; /* More rounded */
+    text-align: center;
+    box-shadow: 0 8px 30px var(--shadow-light); /* Deeper shadow */
+    transition: all var(--transition-ease);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    
+
+
+
+
+    padding: 15px; /* Further reduced padding to make card shorter */
+    max-height: 380px; /* Adjusted max-height to control the card height */
+
+
+
+
+}
+
+/* REMOVED: .product-card::before for border shine */
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 4px solid transparent; /* Thicker border */
+    border-radius: 18px;
+    transition: all 0.6s var(--transition-ease); /* Slower, bouncier border */
+    opacity: 0;
+    z-index: 0;
+}
+
+.product-card:hover::before {
+    /* REMOVED: border-color: var(--accent-vibrant); */
+    opacity: 0; /* Ensures the border shine is gone */
+    transform: scale(1); /* No scale for border */
+}
+
+.product-card:hover {
+    transform: translateY(-15px) scale(1.03); /* Removed rotation (bending effect) */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 10px rgba(0, 0, 0, 0.2); /* Darker shadow effect */
+    border-color: transparent;
+}
+
+
+
+.product-card a {
+    display: block;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+
+
+
+
+    margin-bottom: 10px; /* Reduced margin */
+
+
+
+
+}
+
+.product-card img {
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+    transition: transform 0.6s var(--transition-ease), filter 0.4s ease;
+
+
+
+
+
+
+
+     height: 160px; /* Further reduced height for images */
+    margin-bottom: 10px; /* Further reduced margin */
+
+
+
+
+
+}
+
+.product-card:hover img {
+    transform: scale(1.03); /* Subtle image scale */
+    filter: brightness(0.9) saturate(1.1); /* Dim and saturate for focus */
+}
+
+.product-card h3 {
+    color: var(--text-dark);
+    font-weight: 800;
+    position: relative;
+    z-index: 1;
+    white-space: nowrap; /* Prevent text wrapping for short names */
+    overflow: hidden; /* Hide overflow if text is too long */
+    text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+
+
+
+
+
+     font-size: 1.5rem; /* Slightly smaller heading */
+    margin-bottom: 5px; /* Significantly reduced margin for name */
+    /* white-space, overflow, and text-overflow properties remain the same for truncation */
+
+
+
+
+
+
+}
+
+.product-card .price {
+    /* font-size: 1.4rem; Slightly smaller price */
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* margin-bottom: 15px; Reduced margin between price and button */
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 105, 180, 0.4);
+    position: relative;
+    z-index: 1;
+
+
+
+
+    font-size: 1.4rem; /* Slightly smaller price */
+    margin-bottom: 15px; /* Reduced margin between price and button */
+
+
+
+
+
+}
+
+/* Shop Now button specific hover (clean & impressive) */
+.product-card .btn {
+    width: 90%;
+    /* padding: 10px 18px; Further reduced padding */
+    /* font-size: 0.9rem; Further smaller font size */
+    border-radius: 10px;
+    background: var(--accent-vibrant);
+    color: var(--bg-primary);
+    transition: all 0.4s var(--transition-ease);
+    position: relative;
+    overflow: hidden;
+    transform: translateZ(0);
+
+
+
+
+
+
+
+    padding: 10px 18px; /* Further reduced padding */
+    font-size: 0.9rem; /* Further smaller font size */
+
+
+
+
+}
+
+
+
+
+
+/* --- Product Grid - Interactive & Glamorous --- */
+
+.product-card {
+    padding: 15px; /* Further reduced padding to make card shorter */
+    max-height: 400px; /* Adjusted max-height to control the card height */
+}
+
+.product-card a {
+    margin-bottom: 12px; /* Reduced margin */
+}
+
+.product-card img {
+    height: 160px; /* Further reduced height for images */
+    margin-bottom: 4px; /* Further reduced margin */
+}
+
+.product-card h3 {
+    font-size: 1.5rem; /* Slightly smaller heading */
+    margin-bottom: 0px; /* Significantly reduced margin for name */
+    /* white-space, overflow, and text-overflow properties remain the same for truncation */
+}
+
+.product-card .price {
+    font-size: 1.4rem; /* Slightly smaller price */
+    margin-bottom: 10px; /* Reduced margin between price and button */
+}
+
+.product-card .btn {
+    padding: 10px 18px; /* Further reduced padding */
+    font-size: 0.9rem; /* Further smaller font size */
+}
+
+
+
+
+
+
+
+
+
+
+.product-card .btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(208, 180, 208, 0.3); /* More visible white overlay */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease-out, height 0.5s ease-out;
+    z-index: 0;
+}
+
+.product-card .btn:hover {
+    background: var(--accent-gradient);
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.6);
+    transform: translateY(-5px) scale(1.05) rotate(1deg); /* Lift, scale and rotate */
+    color: var(--bg-primary);
+}
+
+.product-card .btn:hover::after {
+    width: 220%; /* Make circle cover button */
+    height: 220%;
+}
+
+/* --- Product Detail Page - Dazzling Layout --- */
+.product-detail-section {
+    display: flex;
+    gap: 70px; /* More gap */
+    margin-top: 80px; /* More top margin */
+    background: var(--bg-primary);
+    padding: 60px; /* More padding */
+    border-radius: 20px;
+    box-shadow: 0 10px 40px var(--shadow-light);
+    margin-bottom: 100px; /* More bottom margin */
+    align-items: flex-start;
+}
+
+.product-image {
+    flex: 1;
+    text-align: center;
+    min-width: 420px; /* Larger min-width */
+    position: relative;
+    padding: 40px;
+    background-color: var(--bg-secondary);
+    border-radius: 15px;
+    box-shadow: inset 0 0 25px rgba(0,0,0,0.08); /* Deeper inner shadow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 550px; /* Taller image */
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15); /* Deeper shadow */
+    transition: transform var(--transition-ease);
+}
+
+.product-image:hover img {
+    transform: scale(1.05) rotate(-2deg); /* More zoom with playful rotation */
+}
+
+.product-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%; /* Start further off-screen */
+    width: 40%; /* Wider streak */
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6); /* More visible white streak */
+    transform: skewX(-35deg); /* Sharper angle */
+    transition: left 1s ease-in-out; /* Slower, more elegant shimmer */
+    pointer-events: none;
+}
+
+.product-image:hover::after {
+    left: 150%; /* Move further across on hover */
+}
+
+.product-info {
+    flex: 2;
+}
+
+.product-info h1 {
+    font-size: 4.5rem; /* Massive heading */
+    margin-bottom: 25px;
+    line-height: 1.1;
+    font-weight: 900;
+    color: var(--text-dark);
+    letter-spacing: 0.05em;
+}
+
+.product-info .price {
+    font-size: 3.2rem; /* Larger price */
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 40px;
+    font-weight: 800;
+    display: inline-block;
+    letter-spacing: 0.02em;
+    text-shadow: 0 0 15px rgba(255, 105, 180, 0.5); /* Stronger glow */
+}
+
+.product-info p {
+    margin-bottom: 40px;
+    line-height: 1.9;
+    font-size: 1.2rem; /* Larger body text */
+    color: var(--text-muted);
+}
+
+/* Add to Cart button specific hover (clean & impressive) */
+.product-info .btn {
+    padding: 20px 45px; /* More padding */
+    font-size: 1.35rem; /* Larger text */
+    margin-top: 30px;
+    border-radius: 60px; /* Pill shape */
+    background: var(--accent-vibrant);
+    color: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
+    transform: translateZ(0);
+    box-shadow: 0 10px 35px rgba(255, 105, 180, 0.5); /* Base shadow */
+}
+
+.product-info .btn::after { /* Background ripple/pulse */
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: var(--accent-gradient);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.6s var(--transition-ease); /* Slower, bouncier reveal */
+    z-index: -1;
+}
+
+.product-info .btn:hover {
+    box-shadow: 0 15px 50px rgba(255, 105, 180, 0.8); /* More prominent glow */
+    transform: translateY(-8px) rotateX(8deg); /* More lift and aggressive 3D tilt */
+    color: var(--bg-primary);
+    background-color: transparent;
+}
+
+.product-info .btn:hover::after {
+    transform: scaleX(1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Cart Section - Playful & Structured --- */
+.cart-section {
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+
+.cart-items-container {
+    background: var(--bg-primary);
+    border-radius: 20px;
+    box-shadow: 0 8px 30px var(--shadow-light);
+    padding: 40px;
+    margin-bottom: 40px;
+}
+
+.empty-cart-message {
+    text-align: center;
+    font-size: 1.6rem; /* Larger message */
+    color: var(--text-muted);
+    padding: 60px 30px;
+    border: 3px dashed var(--border-light); /* Thicker dashed border */
+    border-radius: 20px;
+    animation: fadeIn 1.2s ease-out;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px dashed var(--border-light); /* Dashed separator */
+    padding: 25px 0; /* More padding */
+    gap: 30px; /* More gap */
+    transition: all 0.4s var(--transition-ease);
+    position: relative;
+    border: 3px solid transparent; /* Prepare for border change */
+    border-radius: 15px; /* Rounded corners */
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item:hover {
+    background-color: var(--bg-secondary);
+    border-color: var(--accent-vibrant); /* Highlight border */
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.2); /* Soft shadow on hover */
+    transform: translateX(12px) scale(1.01) rotate(0.5deg); /* More slide, slight scale and rotation */
+}
+
+.cart-item img {
+    width: 120px; /* Larger image */
+    height: 120px;
+    object-fit: contain;
+    border-radius: 10px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.cart-item .item-details {
+    flex-grow: 1;
+}
+
+.cart-item .item-details h3 {
+    font-size: 1.6rem; /* Larger text */
+    margin-bottom: 10px;
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.cart-item .item-details .price {
+    font-size: 1.4rem; /* Larger price */
+    color: var(--accent-vibrant);
+    font-weight: 700;
+    text-shadow: 0 0 5px rgba(255, 105, 180, 0.2);
+}
+
+.cart-item .quantity-controls {
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+    flex-shrink: 0;
+    border: 2px solid var(--border-light); /* Thicker border */
+    border-radius: 8px; /* More rounded */
+    overflow: hidden;
+    background-color: var(--bg-secondary);
+}
+
+.quantity-controls button {
+    background-color: transparent;
+    border: none;
+    padding: 12px 18px; /* More padding */
+    font-size: 1.2rem; /* Larger text */
+    cursor: pointer;
+    transition: all 0.3s var(--transition-ease);
+    height: 48px; /* Taller buttons */
+    min-width: 48px; /* Wider buttons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-vibrant);
+    font-weight: 700;
+}
+
+.quantity-controls button:hover {
+    background-color: var(--accent-vibrant);
+    color: var(--bg-primary);
+    transform: scale(1.1); /* More pop */
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.4);
+}
+
+.quantity-controls span {
+    padding: 0 18px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    min-width: 48px;
+    text-align: center;
+    color: var(--text-dark);
+}
+
+.cart-item .remove-from-cart-btn {
+    background: #E74C3C; /* Red */
+    color: white;
+    padding: 12px 20px; /* More padding */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.4s var(--transition-ease);
+    font-size: 1rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+}
+
+.remove-from-cart-btn:hover {
+    background: #C0392B; /* Darker red */
+    transform: translateY(-5px) rotate(3deg); /* More lift and playful rotation */
+    box-shadow: 0 6px 15px rgba(231, 76, 60, 0.6);
+}
+
+.cart-summary {
+    background: var(--bg-primary);
+    border-radius: 20px;
+    box-shadow: 0 8px 30px var(--shadow-light);
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.7rem; /* Larger summary text */
+    font-weight: 700;
+    animation: slideInUp 1s var(--transition-ease);
+}
+
+.cart-summary .total-info span {
+    color: var(--accent-gradient); /* Gradient for total amount */
+    font-size: 2.2rem; /* Even larger total amount */
+    font-weight: 800;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(255, 105, 180, 0.4);
+}
+
+
+
+
+
+
+/* This is the general "Proceed to Checkout" button from the cart page */
+.proceed-to-checkout-btn {
+    display: block;
+    width: fit-content;
+    margin: 40px auto 0; /* More margin */
+    padding: 18px 40px; /* More padding */
+    font-size: 1.3rem; /* Larger text */
+    background: var(--accent-gradient);
+    color: var(--bg-primary);
+    border-radius: 12px;
+    box-shadow: 0 10px 35px rgba(255, 105, 180, 0.5);
+    transition: all 0.5s var(--transition-ease);
+}
+
+.proceed-to-checkout-btn:hover {
+    box-shadow: 0 15px 50px rgba(255, 105, 180, 0.8);
+    transform: translateY(-8px) scale(1.03) rotate(-1deg); /* Lift, scale and rotate */
+}
+
+/* --- About Us Section - Lush & Informative --- */
+.about-section {
+    padding: 60px; /* More padding */
+    line-height: 1.9;
+    background-color: var(--bg-primary);
+    border-radius: 20px;
+    box-shadow: 0 8px 30px var(--shadow-light);
+    margin: 80px auto;
+    animation: fadeIn 1s ease-out;
+}
+
+.about-section h1 {
+    font-size: 4rem; /* Larger heading */
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 900;
+    text-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+}
+
+.about-section h2 {
+    font-size: 2.8rem; /* Larger subheading */
+    color: var(--text-dark);
+    margin-top: 50px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--border-light); /* Thicker border */
+    padding-bottom: 12px;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+}
+
+.about-section p {
+    font-size: 1.1rem; /* Slightly larger text */
+    margin-bottom: 20px;
+    color: var(--text-muted);
+}
+
+.about-section ul {
+    list-style: none;
+    margin-left: 0;
+    margin-bottom: 30px;
+}
+
+.about-section ul li {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+    position: relative;
+    padding-left: 35px; /* More padding */
+    transition: transform 0.3s var(--transition-ease);
+}
+
+.about-section ul li:hover {
+    transform: translateX(8px) scale(1.02); /* More slide and subtle scale */
+    color: var(--accent-vibrant);
+}
+
+.about-section ul li::before {
+    content: '★'; /* Star icon */
+    color: var(--accent-vibrant);
+    position: absolute;
+    left: 0;
+    font-size: 1.5em; /* Larger icon */
+    top: 0;
+    line-height: 1; /* Align with text */
+}
+
+.about-section ul li strong {
+    color: var(--accent-vibrant);
+}
+
+.contact-info {
+    margin-top: 60px;
+    background-color: var(--bg-secondary);
+    border: 2px dashed var(--border-light); /* Thicker dashed border */
+    border-radius: 15px;
+    padding: 35px; /* More padding */
+    text-align: center;
+    box-shadow: inset 0 2px 10px rgba(0,0,0,0.08); /* Deeper inner shadow */
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+
+.contact-info a {
+    color: var(--accent-vibrant);
+    text-decoration: underline;
+    font-weight: 700;
+    font-size: 1.15rem; /* Larger link */
+}
+
+/* --- Footer - Chic & Subtle --- */
+footer {
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    text-align: center;
+    padding: 1.5rem 0; /* More padding */
+    margin-top: 90px; /* More top margin */
+    font-size: 1rem;
+    border-top: 2px solid var(--border-light);
+    box-shadow: 0 -4px 20px var(--shadow-light);
+}
+
+footer .container {
+    padding: 0;
+}
+
+/* --- Toast Notification - Sparkling --- */
+#toast-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.toast {
+    background-color: rgba(255, 250, 250, 0.95); /* Soft rose white */
+    color: var(--text-dark);
+    padding: 18px 30px; /* More padding */
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15), var(--glow-effect); /* Deeper shadow, strong glow */
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    min-width: 280px; /* Wider toast */
+    max-width: 400px;
+    font-size: 1.1rem;
+    border: 2px solid var(--accent-vibrant); /* Thicker border */
+    backdrop-filter: blur(5px);
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* --- Custom Message Box - Glamorous Modal --- */
+.message-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Darker overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1500;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.message-box.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.message-content {
+    background-color: var(--bg-primary);
+    padding: 50px; /* More padding */
+    border-radius: 20px;
+    box-shadow: 0 10px 40px var(--shadow-light);
+    text-align: center;
+    max-width: 500px; /* Wider modal */
+    width: 90%;
+    transform: scale(0.8);
+    transition: transform 0.4s var(--transition-ease); /* Bouncier entry */
+    border: 2px solid var(--border-light);
+}
+
+.message-box.show .message-content {
+    transform: scale(1);
+}
+
+.message-content p {
+    font-size: 1.3rem; /* Larger text */
+    margin-bottom: 30px;
+    color: var(--text-dark);
+}
+
+.message-content .btn {
+    background: var(--accent-gradient);
+    color: var(--bg-primary);
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Checkout Page Specific Styles - LUXURIOUS! --- */
+
+.checkouthead{
+    text-align: center;
+}
+.checkouthead h1 {
+  margin: 0; /* Remove default margin from the h1 */
+  font-size: 3em; /* Adjust font size as needed */
+}
+
+
+
+
+
+
+
+
+
+.checkout-container {
+    max-width: 1100px; /* Even wider checkout */
+    margin: 50px auto 100px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 2fr 1.3fr; /* Slightly more space for summary */
+    gap: 50px; /* Larger gap */
+    align-items: flex-start;
+    background-color: var(--bg-secondary);
+    border-radius: 25px; /* More rounded */
+    box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3); /* Deeper, pinker shadow */
+    animation: slideInPop 1s var(--transition-ease); /* Bouncier animation */
+}
+
+@keyframes slideInPop {
+    from { transform: translateY(30px) scale(0.98); opacity: 0; }
+    to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.shipping-info,
+.payment-info,
+.order-summary {
+    padding: 50px; /* Increased padding */
+    border-radius: 20px;
+    background: var(--bg-primary);
+    box-shadow: 0 8px 35px rgba(255, 105, 180, 0.2); /* Soft pink shadow */
+    border: 2px solid var(--border-light); /* Thicker border */
+    transition: transform 0.4s var(--transition-ease), box-shadow 0.4s var(--transition-ease);
+}
+
+/* Add subtle hover effect for sections (e.g., when user focuses on a form) */
+.shipping-info:hover,
+.payment-info:hover,
+.order-summary:hover {
+    transform: translateY(-5px) rotate(0.5deg); /* More lift with slight rotation */
+    box-shadow: 0 12px 45px rgba(255, 105, 180, 0.3); /* Deeper shadow */
+    border-color: var(--accent-vibrant); /* Highlight border */
+}
+
+.checkout-container h2 { /* Apply to all h2s within checkout sections */
+    color: var(--text-dark);
+    border-bottom: 3px solid var(--accent-gradient); /* Gradient accent line */
+    padding-bottom: 18px;
+    margin-bottom: 35px;
+    font-size: 2.8rem; /* Larger heading */
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    text-shadow: 0 0 15px rgba(255, 105, 180, 0.4); /* Stronger glow */
+}
+
+.form-group {
+    margin-bottom: 30px; /* Increased spacing */
+}
+
+.form-group label {
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    display: block;
+    font-weight: 700; /* Bolder labels */
+    font-size: 1.15rem; /* Larger label text */
+    letter-spacing: 0.02em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+    padding: 16px 20px; /* More padding for bigger input fields */
+    border-radius: 12px; /* More rounded input fields */
+    border: 2px solid var(--border-light); /* Thicker border */
+    background-color: var(--bg-secondary); /* Light pink background */
+    color: var(--text-dark);
+    font-size: 1.15rem; /* Larger text inside inputs */
+    width: 100%;
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.08); /* Deeper inner shadow */
+    transition: border-color 0.4s var(--transition-ease), box-shadow 0.4s var(--transition-ease), background-color 0.4s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-vibrant);
+    box-shadow: 0 0 0 6px rgba(255, 105, 180, 0.4), inset 0 2px 8px rgba(0,0,0,0.1); /* More prominent focus glow */
+    background-color: var(--bg-primary); /* White background on focus for clarity */
+    transform: scale(1.01); /* Subtle grow on focus */
+}
+
+/* Order Summary specific styles */
+#orderItems {
+    margin-bottom: 35px;
+    border-bottom: 2px dashed var(--border-light); /* Thicker dashed separator */
+    padding-bottom: 25px;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0; /* More padding */
+    font-size: 1.15rem;
+    color: var(--text-dark);
+    border-bottom: 1px dotted rgba(255, 105, 180, 0.1); /* Finer, pinker separator */
+}
+
+.order-item:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.order-item strong {
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.order-item span {
+    color: var(--text-muted);
+}
+
+.order-totals {
+    margin-top: 35px;
+    padding-top: 30px;
+    border-top: 3px solid var(--border-light); /* Stronger separator line */
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.order-totals p {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.25rem; /* Larger text */
+    margin-bottom: 0;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.order-totals p span {
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.order-totals h3 {
+    display: flex;
+    justify-content: space-between;
+    color: var(--accent-vibrant);
+    font-size: 2.6rem; /* Prominent total font size */
+    margin-top: 20px;
+    margin-bottom: 0;
+    letter-spacing: 0.02em;
+}
+
+.order-totals h3 span {
+    font-size: 2.8rem; /* Even larger total amount */
+    font-weight: 900;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 18px rgba(255, 105, 180, 0.6); /* Intense glow on total amount */
+}
+
+.payment-info {
+    grid-column: 1 / -1; /* Make payment info span across both columns */
+    margin-top: 0;
+}
+
+/* Specific styling for the Place Order button at the end of checkout */
+#placeOrderBtn {
+    width: 100%;
+    padding: 20px 50px; /* Even more padding for prominence */
+    font-size: 1.5rem; /* Larger text */
+    border-radius: 15px; /* Slightly more rounded */
+    background: var(--accent-gradient);
+    color: var(--bg-primary);
+    box-shadow: 0 12px 40px rgba(255, 105, 180, 0.6);
+    transition: all 0.5s var(--transition-ease);
+}
+
+#placeOrderBtn:hover {
+    box-shadow: 0 18px 60px rgba(255, 105, 180, 0.9);
+    transform: translateY(-10px) scale(1.04) rotate(-2deg); /* More aggressive lift, scale and playful rotation */
+}
+
+/* --- Product Filters & Sort --- */
+.product-filters-sort {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 60px;
+    padding: 30px 35px;
+    background-color: var(--bg-secondary);
+    border-radius: 20px;
+    box-shadow: 0 5px 20px var(--shadow-light);
+    border: 2px solid var(--border-light);
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.filter-group label {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    white-space: nowrap;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.filter-group select {
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%238B008B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>'); /* Dark Magenta arrow */
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 20px;
+    padding-right: 45px;
+    background-color: var(--bg-primary);
+    color: var(--text-dark);
+    border: 2px solid var(--border-light);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    transition: border-color 0.4s var(--transition-ease), box-shadow 0.4s var(--transition-ease);
+}
+
+.filter-group select:hover {
+    border-color: var(--accent-vibrant);
+}
+
+.filter-group select:focus {
+    outline: none;
+    box-shadow: 0 0 0 5px rgba(255, 105, 180, 0.3);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .product-detail-section {
+        flex-direction: column;
+        gap: 50px;
+        padding: 40px;
+    }
+    .product-image {
+        min-width: unset;
+        width: 100%;
+        max-height: 450px; /* Adjust max height for image on smaller screens */
+    }
+    .product-info h1 {
+        font-size: 3.8rem;
+    }
+    .product-info .price {
+        font-size: 2.8rem;
+    }
+    .hero {
+        height: 65vh;
+    }
+    .hero h1 {
+        font-size: 4.5rem;
+    }
+    .hero p {
+        font-size: 1.3rem;
+    }
+    .hero .btn {
+        padding: 16px 40px;
+        font-size: 1.2rem;
+    }
+    .checkout-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 25px;
+    }
+    .payment-info {
+        grid-column: auto;
+    }
+    .checkout-container h2 {
+        font-size: 2.4rem;
+    }
+    .form-group label {
+        font-size: 1.1rem;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+        padding: 14px 18px;
+        font-size: 1.1rem;
+    }
+    .order-totals p, .order-item {
+        font-size: 1.1rem;
+    }
+    .order-totals h3 {
+        font-size: 2.2rem;
+    }
+    .order-totals h3 span {
+        font-size: 2.4rem;
+    }
+    #placeOrderBtn {
+        padding: 18px 40px;
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 20px 0;
+    }
+    header .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    nav ul li {
+        margin: 0;
+    }
+    .logo a {
+        font-size: 2.2rem;
+    }
+    header h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero {
+        height: 55vh;
+        padding: 40px 0;
+        margin-bottom: 40px;
+    }
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+    .hero p {
+        font-size: 1.15rem;
+    }
+    .hero .btn {
+        padding: 14px 30px;
+        font-size: 1.1rem;
+    }
+
+    .section-title {
+        font-size: 3.5rem;
+        margin-bottom: 60px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card {
+        padding: 25px;
+    }
+    .product-card h3 {
+        font-size: 1.8rem;
+    }
+    .product-card .price {
+        font-size: 1.6rem;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        padding: 20px 0;
+    }
+
+    .cart-item img {
+        margin-bottom: 12px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .cart-item .item-details {
+        margin-bottom: 12px;
+        width: 100%;
+    }
+
+    .cart-item .quantity-controls {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 12px;
+    }
+
+    .cart-item .remove-from-cart-btn {
+        width: 100%;
+        font-size: 0.95rem;
+    }
+
+    .cart-summary {
+        flex-direction: column;
+        gap: 20px;
+        font-size: 1.5rem;
+    }
+
+    .cart-summary .total-info span {
+        font-size: 1.8rem;
+    }
+
+    .proceed-to-checkout-btn {
+        width: 90%;
+        font-size: 1.2rem;
+    }
+
+    .about-section {
+        padding: 45px;
+        margin: 60px auto;
+    }
+    .about-section h1 {
+        font-size: 3.2rem;
+    }
+    .about-section h2 {
+        font-size: 2.2rem;
+    }
+    .about-section p,
+    .about-section ul li,
+    .contact-info p {
+        font-size: 1rem;
+    }
+
+    #toast-container {
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+        align-items: center;
+    }
+    .toast {
+        min-width: unset;
+        width: 90%;
+        text-align: center;
+    }
+
+    .product-filters-sort {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px;
+    }
+    .filter-group {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .filter-group select {
+        width: auto;
+        min-width: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-info h1 {
+        font-size: 3rem;
+    }
+    .product-info .price {
+        font-size: 2.5rem;
+    }
+    .hero h1 {
+        font-size: 3rem;
+    }
+    .section-title, .cart-section h1, .about-section h1 {
+        font-size: 2.8rem;
+    }
+    .hero {
+        height: 45vh;
+    }
+    .hero-content {
+        padding: 30px;
+    }
+    .product-detail-section {
+        padding: 25px;
+        gap: 35px;
+    }
+    .checkout-container {
+        padding: 20px;
+    }
+    .shipping-info, .payment-info, .order-summary {
+        padding: 30px;
+    }
+    .checkout-container h2 {
+        font-size: 2rem;
+    }
+    #placeOrderBtn {
+        padding: 16px 30px;
+        font-size: 1.2rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.cart-item:hover {
+    background-color: var(--bg-secondary);
+    /* border-color: var(--accent-vibrant); Removed border highlight */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+    transform: scale(1.01); /* Subtle scale, removed tilt */
+}
+
+/* This is the general "Proceed to Checkout" button from the cart page */
+.proceed-to-checkout-btn:hover {
+    box-shadow: 0 12px 40px rgba(255, 105, 180, 0.6); /* Softer shadow */
+    transform: translateY(-5px) scale(1.02); /* Less lift, removed tilt */
+}
+
+/* Add subtle hover effect for sections (e.g., when user focuses on a form) */
+.shipping-info:hover,
+.payment-info:hover,
+.order-summary:hover {
+    transform: translateY(-3px) scale(1.005); /* Less lift, removed tilt, subtle scale */
+    box-shadow: 0 10px 40px rgba(255, 105, 180, 0.25); /* Softer shadow */
+    /* border-color: var(--accent-vibrant); Removed border highlight */
+}
+
+/* Specific styling for the Place Order button at the end of checkout */
+#placeOrderBtn:hover {
+    box-shadow: 0 15px 50px rgba(255, 105, 180, 0.8); /* Slightly less intense shadow */
+    transform: translateY(-6px) scale(1.03); /* Less aggressive lift, removed playful rotation */
+}
+
+
+
+
+
+
+
+
+
+
+
+

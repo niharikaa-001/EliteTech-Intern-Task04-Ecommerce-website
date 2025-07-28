@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="product-detail-title">Product Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">MyStore</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container product-detail-section">
+            <div class="product-image">
+                <img id="product-detail-img" src="iii.png" alt="Product Image">
+            </div>
+            <div class="product-info">
+                <h1 id="product-detail-name">Product Name</h1>
+                <p class="price" id="product-detail-price">$0.00</p>
+                <p id="product-detail-description">This is a detailed description of the product.</p>
+                <button class="btn add-to-cart-btn" id="add-to-cart-detail">Add to Cart</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 My E-commerce Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Example of how you might get a product ID from URL and load data
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+            if (productId) {
+                // In a real app, you'd fetch this from an API
+                const product = productsData.find(p => p.id === parseInt(productId));
+                if (product) {
+                    document.getElementById('product-detail-title').textContent = product.name;
+                    document.getElementById('product-detail-img').src = product.image;
+                    document.getElementById('product-detail-img').alt = product.name;
+                    document.getElementById('product-detail-name').textContent = product.name;
+                    document.getElementById('product-detail-price').textContent = `$${product.price.toFixed(2)}`;
+                    document.getElementById('product-detail-description').textContent = product.description;
+                    document.getElementById('add-to-cart-detail').onclick = () => addToCart(product);
+                } else {
+                    document.getElementById('product-detail-name').textContent = "Product Not Found";
+                    document.getElementById('product-detail-description').textContent = "The product you are looking for does not exist.";
+                }
+            }
+        });
+    </script>
+</body>
+</html>

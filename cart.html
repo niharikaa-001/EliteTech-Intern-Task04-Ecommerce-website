@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+
+    
+</head>
+<body>
+
+    
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">MyStore</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container cart-section">
+            <h1>Your Shopping Cart</h1>
+            <div id="cart-items" class="cart-items-container">
+                <!-- Cart items will be rendered here by JavaScript -->
+                <p>Your cart is empty.</p>
+            </div>
+            <div class="cart-summary">
+                <div class="total-info">
+                    <strong>Total:</strong> <span id="cart-total">$0.00</span>
+                </div>
+                <button class="btn checkout-btn">Proceed to Checkout</button>
+            </div>
+            <!-- Custom Message Box -->
+            <div id="message-box" class="message-box hidden">
+                <div class="message-content">
+                    <p id="message-text"></p>
+                    <button id="message-close-btn" class="btn">OK</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 My E-commerce Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

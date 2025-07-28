@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My E-commerce Store - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">MyStore</a>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-video-section">
+            <video autoplay loop muted playsinline class="hero-background-video">
+                <source src="cutiee.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <h1>Unleash Your Inner Sparkle</h1>
+            <p>Discover our dazzling collection designed for the bold and beautiful you.</p>
+            <a href="product.html" class="btn secondary">Shop The Dazzle!</a>
+        </section>
+
+        <section class="featured-products container">
+            <h2>Featured Products</h2>
+            <div class="product-grid" id="featured-products-container">
+            </div>
+        </section>
+
+        </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 My E-commerce Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
